@@ -13,6 +13,9 @@ namespace TheInterviewProblem.Board
         public int Y { get; private set; }
         private GameBoard Board;
 
+        /// <summary>
+        ///<seealso cref="GameBoard.CreateNewPiece(int, int)"/>
+        /// </summary>
         public Piece(GameBoard board, int x = 0, int y = 0, Direction direction = Direction.N)
         {
             Direction = direction;
@@ -21,6 +24,7 @@ namespace TheInterviewProblem.Board
             Y = y;
         }
 
+        /// <returns>True if all moves were valid, otherwise false</returns>
         public bool Move(string commands)
         {
             foreach(char command in commands)
@@ -33,6 +37,7 @@ namespace TheInterviewProblem.Board
             return true;
         }
 
+        /// <returns>True if the move was valid, otherwise false</returns>
         public bool Move(char command)
         {
             switch(command)

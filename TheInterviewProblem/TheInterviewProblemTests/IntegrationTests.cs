@@ -10,11 +10,12 @@ namespace TheInterviewProblemTests
     public class IntegrationTests
     {
         [TestMethod]
-        public void Scenerio0()
+        public void Scenerio0_noMove()
         {
             Scenerio("", "0 0 N", true);
         }
 
+        #region Test from the exercise
         [TestMethod]
         public void Scenerio1()
         {
@@ -33,6 +34,8 @@ namespace TheInterviewProblemTests
             Scenerio("MMMM", "0 4 N", true);
         }
 
+        #endregion
+
         [TestMethod]
         public void Scenerio4_HitBorder()
         {
@@ -40,9 +43,21 @@ namespace TheInterviewProblemTests
         }
 
         [TestMethod]
-        public void Scenerio5()
+        public void Scenerio5_RollAndBack()
         {
             Scenerio("RRRRRLLLL", "0 0 E", true);
+        }
+
+        [TestMethod]
+        public void Scenerio6_HitBorder()
+        {
+            Scenerio("LM", "0 0 W", false);
+        }
+
+        [TestMethod]
+        public void Scenerio7_HitBorder()
+        {
+            Scenerio("LLM", "0 0 S", false);
         }
 
         public void Scenerio(string command, string expectedLocation, bool isMoveSuccessful)

@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace TheInterviewProblem.Board
 {
+    /// <summary>
+    /// The class allows many <see cref="Piece"/> to share one space.
+    /// The class allows to detect colision between <see cref="Piece"/>
+    /// This class should be used to create new <see cref="Piece"/> by method <see cref="CreateNewPiece(int, int)"/>
+    /// </summary>
     public class GameBoard
     {
         private Piece[,] Fields;
